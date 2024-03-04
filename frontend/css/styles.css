@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url("../fonts/roboto_slab/RobotoSlab-VariableFont_wght.ttf") format('truetype');
+}
+
+:root {
+    --default-background: #35374B;
+    --secondary-background: #344955;
+    --default-text: #78A083;
+    --secondary-text: #50727B;
+    --default-border-radius: 1rem;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto Slab', sans-serif;
+    color: var(--secondary-text);
+}
+
+html {
+    background: var(--default-background);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to left, var(--default-background), var(--secondary-background));
+    color: var(--default-text);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--default-text);
+}
+
+.dropdown-header {
+    display: none;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+}
+
+main {
+    padding: 30px;
+}
+
+.section-header {
+    text-align: center;
+}
+
+.section-table {
+    margin: 0 auto;
+}
+
+.section-table td {
+    padding: 0 50px 30px;
+    width: 250px;
+}
+
+.book-card {
+    background: var(--secondary-background);
+    color: var(--default-text);
+    text-align: center;
+}
+
+.book-card img {
+    width: 250px;
+    object-fit: cover;
+    height: 180px;
+}
+
+.book-card button {
+    width: 250px;
+    border-radius: 0;
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--default-text);
+    padding: 10px 0;
+}
+
+.book-card button:hover {
+    background: var(--default-background);
+    outline: 1px solid var(--default-text);
+    cursor: pointer;
+}
+
+footer {
+    border-top: 1px solid var(--secondary-text);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.login-register {
+    margin: 0 auto;
+    width: max-content;
+    text-align: center;
+}
+
+form input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+.login-register button {
+    width: 250px;
+    border-radius: 0;
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--secondary-text);
+    padding: 10px 0;
+}
+
+.login-register button:hover {
+    background: var(--default-background);
+    outline: 1px solid var(--secondary-text);
+    cursor: pointer;
+}
+
+.form-group input {
+    color: var(--secondary-text);
+    outline: 1px solid var(--secondary-text);
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.login-register a {
+    color: var(--default-text)
+}
+
+.logo {
+    transform: scale(1.2);
+}
