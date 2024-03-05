@@ -15,7 +15,7 @@
             <li><a href="index.html">Home</a></li>
             <li>
                 <a href="#">Categories</a>
-                <ul class="dropdown-header">
+                <ul id="categories-dropdown" class="dropdown-header">
                     <li><a href="#">Fiction</a></li>
                     <li><a href="#">Non-Fiction</a></li>
                     <li><a href="#">Fantasy</a></li>
@@ -23,7 +23,7 @@
             </li>
             <li>
                 <a href="#">Account</a>
-                <ul class="dropdown-header">
+                <ul id="account-dropdown" class="dropdown-header">
                     <li><a href="#">Login</a></li>
                     <li><a href="#">Register</a></li>
                 </ul>
@@ -40,48 +40,9 @@
                     <h2>Featured Books</h2>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <article class="book-card">
-                        <a href="product_details.html"><img src="../images/book1.jpg" alt="Book 1"></a>
-                        <h2>Title of Book 1</h2>
-                        <p>Author: Author Name</p>
-                        <p>Price: $19.99</p>
-                        <button>Add to Cart</button>
-                    </article>
-                </td>
-                <td>
-                    <article class="book-card">
-                        <a href="product_details.html"><img src="../images/book2.jpg" alt="Book 2"></a>
-                        <h2>Title of Book 2</h2>
-                        <p>Author: Author Name</p>
-                        <p>Price: $24.99</p>
-                        <button>Add to Cart</button>
-                    </article>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <article class="book-card">
-                        <a href="product_details.html"><img src="../images/book1.jpg" alt="Book 1"></a>
-                        <h2>Title of Book 1</h2>
-                        <p>Author: Author Name</p>
-                        <p>Price: $19.99</p>
-                        <button>Add to Cart</button>
-                    </article>
-                </td>
-                <td>
-                    <article class="book-card">
-                        <a href="product_details.html"><img src="../images/book2.jpg" alt="Book 2"></a>
-                        <h2>Title of Book 2</h2>
-                        <p>Author: Author Name</p>
-                        <p>Price: $24.99</p>
-                        <button>Add to Cart</button>
-                    </article>
-                </td>
-            </tr>
+            <tr id="books-container"></tr>
         </table>
+        <button class="view-more-btn" onclick="showBooks(2, 2)">View More</button>
     </section>
 </main>
 
@@ -97,4 +58,6 @@
 </footer>
 
 </body>
+
+<script src="../js/view_more.js"></script>
 </html>

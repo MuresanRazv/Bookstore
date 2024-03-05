@@ -155,3 +155,38 @@ form input {
 .logo {
     transform: scale(1.2);
 }
+
+.error {
+    color: red;
+}
+
+#password_match {
+    display: none;
+}
+
+#books-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.view-more-btn {
+    width: 250px;
+    border-radius: 0;
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--secondary-text);
+    padding: 10px 0;
+}
+
+.view-more-btn:hover {
+    background: var(--default-background);
+    outline: 1px solid var(--secondary-text);
+    cursor: pointer;
+}
+
+#featured_books {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
