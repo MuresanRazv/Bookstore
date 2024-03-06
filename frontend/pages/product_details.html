@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Detail - Online Bookstore</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/jquery-3.7.1.js"></script>
 </head>
 <body>
 
@@ -36,12 +37,17 @@
     <section id="product-detail">
         <h1>Product Details</h1>
         <article class="book-card">
-            <a href="product_details.html"><img src="../images/book1.jpg" alt="Book 1"></a>
+            <img id="book-image" src="../images/book1.jpg" alt="Book 1">
             <h2>Title of Book 1</h2>
             <p>Author: Author Name</p>
             <p>Price: $19.99</p>
             <button>Add to Cart</button>
         </article>
+
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+        </div>
     </section>
 </main>
 
@@ -57,4 +63,6 @@
 </footer>
 
 </body>
+
+<script src="../js/popup.js"></script>
 </html>

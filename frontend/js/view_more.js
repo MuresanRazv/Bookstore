@@ -1,27 +1,31 @@
 let books = [
     {
         bookTitle: 'Title of Book 1',
-        bookAuthor: 'Author Name',
-        bookPrice: '24.99',
-        bookImg: '../images/book1.jpg'
+        bookAuthor: 'Author Name 4',
+        bookPrice: '15.99',
+        bookImg: '../images/book1.jpg',
+        bookId: 0
     },
     {
-        bookTitle: 'Title of Book 1',
+        bookTitle: 'Title of Book 2',
         bookAuthor: 'Author Name',
         bookPrice: '24.99',
-        bookImg: '../images/book2.jpg'
+        bookImg: '../images/book2.jpg',
+        bookId: 1
     },
     {
-        bookTitle: 'Title of Book 1',
-        bookAuthor: 'Author Name',
+        bookTitle: 'Title of Book 3',
+        bookAuthor: 'Author Name 2',
         bookPrice: '24.99',
-        bookImg: '../images/book1.jpg'
+        bookImg: '../images/book1.jpg',
+        bookId: 2
     },
     {
-        bookTitle: 'Title of Book 1',
-        bookAuthor: 'Author Name',
+        bookTitle: 'Title of Book 4',
+        bookAuthor: 'Author Name 1sdadsdsa',
         bookPrice: '24.99',
-        bookImg: '../images/book2.jpg'
+        bookImg: '../images/book2.jpg',
+        bookId: 3
     },
 ];
 

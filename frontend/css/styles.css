@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Roboto Slab';
-    src: url("../fonts/roboto_slab/RobotoSlab-VariableFont_wght.ttf") format('truetype');
+    src: url("../fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf") format('truetype');
 }
 
 :root {
@@ -169,6 +169,11 @@ form input {
     grid-template-columns: repeat(2, 1fr);
 }
 
+#searched-books-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .view-more-btn {
     width: 250px;
     border-radius: 0;
@@ -189,4 +194,40 @@ form input {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
