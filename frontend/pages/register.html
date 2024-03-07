@@ -9,10 +9,10 @@
 <body>
 
 <main>
-    <section id="register-form">
+    <section id="register">
         <div class="login-register">
             <h2>Register</h2>
-            <form method="POST" onsubmit="validatePassword()">
+            <form method="POST" onsubmit="validatePassword()" id="register-form">
                 <div class="form-group">
                     <label for="username"></label>
                     <input type="text" id="username" name="username" placeholder="Username" required>
@@ -66,4 +66,5 @@
 
 <script src="../js/form_validation.js"></script>
 <script src="../js/dropdown.js"></script>
+<script src="../js/register.js"></script>
 </html>

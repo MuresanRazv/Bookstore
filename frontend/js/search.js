@@ -1,9 +1,28 @@
+async function fetchBooks(input, keyword = false) {
+    const url = `http://localhost/bookstore/${keyword ? 'search_by_keyword': 'search'}?input=${input}`;
+
+    return await fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            data = JSON.parse(data)
+            return data;
+        })
+        .catch(error => {
+            console.error('Error fetching books:', error);
+        });
+}
+
 function search(array, query) {
     const searchTerm = query.toLowerCase();
 
     return array.filter(book => {
-        return book.bookTitle.toLowerCase().includes(searchTerm) ||
-            book.bookAuthor.toLowerCase().includes(searchTerm);
+        return book.title.toLowerCase().includes(searchTerm) ||
+            book.author.toLowerCase().includes(searchTerm);
     });
 }
 
@@ -35,10 +54,10 @@ function renderSearchedBooks(books) {
         result += `
                     <td>
                         <article class="book-card">
-                            <a href="product_details.html"><img src="${book.bookImg}" alt="${book.bookTitle}"></a>
-                            <h2>${book.bookTitle}</h2>
-                            <p>Author: ${book.bookAuthor}</p>
-                            <p>Price: ${book.bookPrice}</p>
+                            <a href="product_details.html"><img src="${book.image_url}" alt="${book.title}"></a>
+                            <h2>${book.title}</h2>
+                            <p>Author: ${book.author}</p>
+                            <p>Price: ${book.price}</p>
                             <button>Add to Cart</button>
                         </article>
                     </td>
@@ -49,19 +68,19 @@ function renderSearchedBooks(books) {
 }
 
 $(document).ready(function() {
-    $('#searchInput').keyup(function () {
+    $('#searchInput').keyup(async function () {
         let query = $(this).val().trim();
         const searchResults = document.getElementById('searchResults');
 
         if (query.length > 0) {
-            let filtered_books = search(books, query);
+            let filtered_books = await fetchBooks(query, false);
             $('#searchResults').empty();
             filtered_books.forEach((book) => {
                 const option = document.createElement('option');
-                option.text = book.bookTitle;
-                option.value = book.bookId;
+                option.text = book.title;
+                option.value = book.id;
                 searchResults.appendChild(option)
-                searchResults.addEventListener('change', function() {
+                searchResults.addEventListener('change', function () {
                     window.location.href = '../pages/product_details.html';
                 });
             })
@@ -72,11 +91,11 @@ $(document).ready(function() {
 
     let searchedBooks = [];
 
-    $('#searchByKeywordInput').keyup(function () {
+    $('#searchByKeywordInput').keyup(async function () {
         let query = $(this).val().trim();
 
         if (query.length > 0) {
-            searchedBooks = searchByKeyword(books, query);
+            searchedBooks = await fetchBooks(query, true);
 
             renderSearchedBooks(searchedBooks);
         } else {
